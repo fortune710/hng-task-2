@@ -1,0 +1,20 @@
+{
+  "name": "hng-stage-two-backend fortunealebiosu",
+  "version": "1.0.0",
+  "description": "Backend Stage 2 Task by fortunealebiosu",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Fortune Alebiosu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^10.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
