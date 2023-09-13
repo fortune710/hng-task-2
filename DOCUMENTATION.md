@@ -5,7 +5,7 @@
 
 ### Create a new person
 1. `/api`
-Method: `POST`
+##### Method: `POST`
 
 #### Sample Request Body
 ```json
@@ -28,8 +28,8 @@ NB: The `name` property is mandatory and `track` is optional. Absence of the nam
 ```
 
 2. `/api/:name`
-Method: `POST`
-Example Endpoint: `/api/fortunethedev`
+##### Method: `POST`
+##### Example Endpoint: `/api/fortunethedev`
 
 #### Sample Response
 ```json
@@ -63,9 +63,9 @@ Example Endpoint: `/api/fortunethedev`
 
 ### Update a Person
 1. `/api/:user_id`
-Description: Updates a particular person using their ID
-Method: `GET`
-Example Endpoint: `/api/2`
+##### Description: Updates a particular person using their ID
+##### Method: `GET`
+##### Example Endpoint: `/api/2`
 
 #### Sample Request Body
 ```json
@@ -107,9 +107,9 @@ After adding the optional `track` property
 
 ### Delete a Person
 1. `/api/:user_id`
-Description: Deletes a particular person using their ID
-Method: `DELETE`
-Example Endpoint: `/api/3`
+##### Description: Deletes a particular person using their ID
+##### Method: `DELETE`
+##### Example Endpoint: `/api/3`
 
 #### Sample Response
 ```json
