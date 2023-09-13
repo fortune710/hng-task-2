@@ -4,9 +4,6 @@ const { getDoc, doc, deleteDoc } = require('firebase/firestore');
 module.exports.deletePersonById = async (req, res) => {
     const { user_id } = req.params;
 
-    if(!user_id) {
-        return res.status(400).json({ message: "No ID specified" });
-    }
     try {
         const personRef = doc(database, "people", user_id);
         const snapshot = await getDoc(personRef);
