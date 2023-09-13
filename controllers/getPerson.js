@@ -9,12 +9,13 @@ module.exports.getPersonById = async (req, res) => {
         const snapshot = await getDoc(personRef);
 
         const person = {
-            id: snapshot.id(),
+            id: snapshot.id,
             ...snapshot.data()
         }
 
-        if(!snapshot.exists) 
-            return res.json({ message: `Person with ID ${user_id} does not exist` });
+        if(!snapshot.exists) {
+            return res.status(404).json({ message: `Person with ID ${user_id} does not exist` });
+        }
 
         return res.json({ person, message: "Person found" })
     }

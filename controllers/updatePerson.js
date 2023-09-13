@@ -9,8 +9,9 @@ module.exports.updatePersonById = async (req, res) => {
         const personRef = doc(database, "people", user_id);
         const snapshot = await getDoc(personRef);
 
-        if(!snapshot.exists) 
-            return res.json({ message: `Person with ID ${user_id} does not exist` });
+        if(!snapshot.exists()) {
+            return res.status(404).json({ message: `Person with ID ${user_id} does not exist` });
+        }
 
         await updateDoc(personRef, { ...updatedValues })
 
@@ -23,6 +24,11 @@ module.exports.updatePersonById = async (req, res) => {
         })
     }
     catch (e) {
+
+        if(e.code === "not-found") {
+            return res.status(404).json({ message: `Person with ID ${user_id} does not exist` });
+        }
+
         return res.status(500).json({ error: e, message: "Error while updating person" })
     }
 
