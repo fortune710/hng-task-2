@@ -5,12 +5,11 @@ This API creates and manages a list of people and their tracks on the HNG Platfo
 ## Table of Contents
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation/Setup](#installation)
+  - [Installation/Setup](#installation/setup)
 - [Running the API](#running-the-api)
 - [Using the API](#using-the-api)
 - [Database Structure](#database-structure)
-- [Folder Structure/Source Code](#contributing)
-- [API Documentation](#api-documentation)
+- [Folder Structure/Source Code](#folder-structure/source-code)
 
 ## Getting Started
 

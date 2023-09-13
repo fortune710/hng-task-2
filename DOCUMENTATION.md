@@ -44,11 +44,11 @@ Example Endpoint: `/api/fortunethedev`
 
 ### Get a Person
 1. `/api/:user_id`
-Description: Gets a particular person using their ID
-Method: `GET`
-Example Endpoint: `/api/2`
+##### Description: Gets a particular person using their ID
+##### Method: `GET`
+##### Example Endpoint: `/api/2`
 
-### Sample Response
+#### Sample Response
 ```json
 {
   "person": {
