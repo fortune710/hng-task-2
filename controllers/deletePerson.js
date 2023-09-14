@@ -13,7 +13,7 @@ module.exports.deletePersonById = async (req, res) => {
         }
 
         await deleteDoc(personRef)
-        return res.status(404).json({ message: `Person with ID ${user_id} has been deleted` })
+        return res.json({ message: `Person with ID ${user_id} has been deleted` })
     }
     catch (e) {
         if(e.code === "not-found") {
