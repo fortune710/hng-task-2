@@ -8,7 +8,7 @@ This API creates and manages a list of people and their tracks on the HNG Platfo
   - [Installation/Setup](#installation/setup)
 - [Running the API](#running-the-api)
 - [Using the API](#using-the-api)
-- [Database Structure](#database-structure)
+- [UML Diagrams](#uml-diagram)
 - [Folder Structure/Source Code](#folder-structure/source-code)
 
 ## Getting Started
@@ -37,6 +37,27 @@ git clone https://github.com/fortune710/hng-task-2.git
 In the root of the project folder on the command line, run `npm install`, to install depenencies
 
 
+3. Create a Firebase Project:
+To create a new Firebase Project, visit the [Firebase Console](https://console.firebase.google.com).
+Once you create a new project, add a new app, then select web platform, and copy your credentials.
+
+Your credentials given should look a bit like this
+```js
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "<Your apiKey>",
+  authDomain: "<Your authDomain>",
+  projectId: "<Your projectId>",
+  storageBucket: "<Your storageBucket>",
+  messagingSenderId: "<Your apiKey>",
+  appId: "<Your appId>"
+};
+```
+
+Then copy those credentials and replace it with the credentials in the `config/database.config.js` file.
+
+
+
 ## Running the API
 This project uses the `nodemon` package to run a local development server. To run this API locally, run
 
@@ -48,12 +69,8 @@ npm run dev
 All endpoints of this API are served on the `/api` route. To use this API, please refer to the [documentation](https://github.com/fortune710/hng-task-2/blob/main/DOCUMENTATION.md) section
 
 
-## Database Structure
-The UML (ER Diagram) for the database structure of this project can be found below.
-
-
-
-You can also have a preview [here]()
+## UML Diagrams
+The UML diagrams for the structure of this project can be found [here](https://drive.google.com/file/d/1ojSXkjaomutPYpvyf43DfymSRuGZBLVO/view)
 
 
 ## Folder Structure/Source Code
