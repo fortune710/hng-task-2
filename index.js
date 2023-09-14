@@ -8,6 +8,12 @@ const server = express();
 server.use(bodyParser.json());
 server.use('/api', MainRouter);
 
+server.get('/', (req, res) => {
+    return res.json({ 
+        message: "Move to the /api route for all the endpoints"
+    })
+})
+
 
 
 
