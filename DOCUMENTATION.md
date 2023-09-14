@@ -5,18 +5,21 @@
 
 ### Create a new person
 1. `/api`
+
+##### Description: Creates a new person and automatically assigns an ID
 ##### Method: `POST`
 
 #### Sample Request Body
 ```json
 {
-    "name": "Fortune",
-    "track": "Backend"
+  "name": "Fortune",
+  "track": "Backend"
 }
 ```
-NB: The `name` property is mandatory and `track` is optional. Absence of the name property will result in `400` status
+NB: The `name` property is mandatory and `track` is optional. Absence of the name property will result in `400` status.
 
 #### Sample Response
+##### Status Code: `201 - Created`
 ```json
 {
   "newPerson": {
@@ -26,12 +29,27 @@ NB: The `name` property is mandatory and `track` is optional. Absence of the nam
   }
 }
 ```
+##### Status Code: `404 - Bad Request`
+```json
+{ 
+  "message": "`name` property is missing from request body" 
+}
+```
+
+##### Status Code: `500 - Internal Server Error`
+```json
+{ 
+  "error": {}, 
+  "message": "Error while adding person" 
+}
+```
 
 2. `/api/:name`
 ##### Method: `POST`
 ##### Example Endpoint: `/api/fortunethedev`
 
 #### Sample Response
+##### Status Code: `201 - Created`
 ```json
 {
   "newPerson": {
@@ -41,6 +59,22 @@ NB: The `name` property is mandatory and `track` is optional. Absence of the nam
 }
 ```
 
+##### Status Code: `404 - Bad Request`
+```json
+{ 
+  "message": "`name` property is missing from endpoint" 
+}
+```
+
+##### Status Code: `500 - Internal Server Error`
+```json
+{ 
+  "error": {}, 
+  "message": "Error while adding person" 
+}
+```
+
+
 
 ### Get a Person
 1. `/api/:user_id`
@@ -49,6 +83,7 @@ NB: The `name` property is mandatory and `track` is optional. Absence of the nam
 ##### Example Endpoint: `/api/2`
 
 #### Sample Response
+##### Status Code: `200 - OK`
 ```json
 {
   "person": {
@@ -59,6 +94,58 @@ NB: The `name` property is mandatory and `track` is optional. Absence of the nam
   "message": "Person found"
 }
 ```
+
+##### Status Code: `404 - Not Found`
+```json
+{ 
+  "message": "Person with ID 2 does not exist" 
+}
+```
+
+##### Status Code: `500 - Internal Server Error`
+```json
+{ 
+  "error": {}, 
+  "message": "Error while finding person" 
+}
+```
+
+### Get All People
+1. `/api/:user_id`
+##### Description: Gets all people
+##### Method: `GET`
+##### Example Endpoint: `/api`
+
+#### Sample Response
+##### Status Code: `200 - OK`
+```json
+{
+  "people": [
+    {
+      "id": "1",
+      "name": "Fortune Alebiosu",
+      "track": "Backend"
+    },
+    {
+      "id": "2",
+      "track": "Backend",
+      "name": "Fortune"
+    }
+  ],
+  "message": "People found"
+}
+```
+
+##### Status Code: `500 - Internal Server Error`
+```json
+{ 
+  "error": {}, 
+  "message": "Error while finding people" 
+}
+```
+
+
+
 
 
 ### Update a Person
@@ -83,6 +170,7 @@ You can also add the optional `track` property to the request body.
 ```
 
 #### Sample Response
+##### Status Code: `200 - OK`
 ```json
 {
   "message": "Person with ID 3 has been updated",
@@ -103,6 +191,22 @@ After adding the optional `track` property
 }
 ```
 
+##### Status Code: `404 - Not Found`
+```json
+{ 
+  "message": "Person with ID 3 does not exist" 
+}
+```
+
+##### Status Code: `500 - Internal Server Error`
+```json
+{ 
+  "error": {}, 
+  "message": "Error while updating person" 
+}
+```
+
+
 
 
 ### Delete a Person
@@ -112,8 +216,25 @@ After adding the optional `track` property
 ##### Example Endpoint: `/api/3`
 
 #### Sample Response
+##### Status Code: `200 - OK`
 ```json
 {
   "message": "Person with ID 3 has been deleted"
 }
 ```
+
+##### Status Code: `404 - Not Found`
+```json
+{ 
+  "message": "Person with ID 3 does not exist" 
+}
+```
+
+##### Status Code: `500 - Internal Server Error`
+```json
+{ 
+  "error": {}, 
+  "message": "Error while updating person" 
+}
+```
+
