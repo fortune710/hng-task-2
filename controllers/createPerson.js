@@ -7,7 +7,7 @@ module.exports.createPerson = async (req, res) => {
 
 
     if(!name) {
-        return res.status(400).json({ message: '`name` property is missing from request body'})
+        return res.status(400).json({ message: '`name` property is missing from request body' })
     }
 
     try {
@@ -37,7 +37,7 @@ module.exports.createPersonFromParams = async (req, res) => {
 
 
     if(!name) {
-        return res.status(400).json({ message: '`name` property is missing from request body'})
+        return res.status(400).json({ message: '`name` property is missing from endpoint' })
     }
 
     try {
