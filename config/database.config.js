@@ -1,14 +1,15 @@
 const { initializeApp } = require('firebase/app');
-const { getFirestore } = require('firebase/firestore')
+const { getFirestore } = require('firebase/firestore');
+require("dotenv").config()
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDjbrudk1V1Tx8_38NMos2zCi7lx1pzqQ8",
-  authDomain: "weather-app-1612.firebaseapp.com",
-  projectId: "weather-app-1612",
-  storageBucket: "weather-app-1612.appspot.com",
-  messagingSenderId: "501895102754",
-  appId: "1:501895102754:web:ed6990118bfdc4a0a3257b"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID
 };
 
 // Initialize Firebase
