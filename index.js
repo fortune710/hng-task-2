@@ -5,8 +5,8 @@ const MainRouter = require('./routes');
 const bodyParser = require('body-parser')
 const server = express();
 
-server.use(bodyParser.json())
-server.use('/api', MainRouter)
+server.use(bodyParser.json());
+server.use('/api', MainRouter);
 
 
 
