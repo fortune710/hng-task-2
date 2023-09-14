@@ -47,6 +47,7 @@ NB: The `name` property is mandatory and `track` is optional. Absence of the nam
 2. `/api/:name`
 ##### Method: `POST`
 ##### Example Endpoint: `/api/fortunethedev`
+NB: There should not be any spaces in the name, otherwise the endpoint will not work.
 
 #### Sample Response
 ##### Status Code: `201 - Created`
