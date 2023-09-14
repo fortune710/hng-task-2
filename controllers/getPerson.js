@@ -8,6 +8,11 @@ module.exports.getPersonById = async (req, res) => {
         const personRef = doc(database, "people", user_id);
         const snapshot = await getDoc(personRef);
 
+        const person = {
+            id: snapshot.id,
+            ...snapshot.data()
+        }
+
         if(!snapshot.exists) {
             return res.status(404).json({ message: `Person with ID ${user_id} does not exist` });
         }
