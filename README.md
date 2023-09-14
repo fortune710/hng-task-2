@@ -8,7 +8,7 @@ This API creates and manages a list of people and their tracks on the HNG Platfo
   - [Installation/Setup](#installation/setup)
 - [Running the API](#running-the-api)
 - [Using the API](#using-the-api)
-- [UML Diagrams](#uml-diagram)
+- [UML Diagram](#uml-diagram)
 - [Folder Structure/Source Code](#folder-structure/source-code)
 
 ## Getting Started
@@ -27,14 +27,15 @@ If you do not have Node.js installed, you can download it [here](https://nodejs.
 Follow the below instructions to get the project installed and setup locally on your machine.
 
 1. Clone the repository:
+Clone the repo and move into the project directory.
 
 ```bash
 git clone https://github.com/fortune710/hng-task-2.git
-
+cd hng-task-2
 ```
 
 2. Install Dependencies:
-In the root of the project folder on the command line, run `npm install`, to install depenencies
+In the root of the project folder on the command line, run `npm install`, to install dependencies.
 
 
 3. Create a Firebase Project:
@@ -69,7 +70,7 @@ npm run dev
 All endpoints of this API are served on the `/api` route. To use this API, please refer to the [documentation](https://github.com/fortune710/hng-task-2/blob/main/DOCUMENTATION.md) section
 
 
-## UML Diagrams
+## UML Diagram
 The UML diagrams for the structure of this project can be found [here](https://drive.google.com/file/d/1ojSXkjaomutPYpvyf43DfymSRuGZBLVO/view)
 
 
